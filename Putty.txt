@@ -1,0 +1,3 @@
+Create shortcut
+locate as below
+"C:\Program Files\PuTTY\putty.exe" -ssh root@Ipaddress -pw password

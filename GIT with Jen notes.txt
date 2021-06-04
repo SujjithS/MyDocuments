@@ -1,0 +1,18 @@
+Version Control System:
+Version control is the management of modifications happening into documents, scripts, large websites and other kinds of information.
+
+two types of VCS:
+1) Centralized VCS- This uses a central server to store all the files and team collaboration. It works on a single repo to which users can directly access a central server.
+2) Destributed VCS- This s/m do not rely on a central server to store all the versions of a project file. Every contributor has a local copy or a clone of the main repo. i.e., everyone maintains a local repo on their own which contains all the files and data present in the main repo
+
+What is GIT?
+Git is  free Open source distributed version control system tool designed to handle everything from small to very large projects with speed and efficiency.It also serves as an important distributed version controlled devops tool.
+
+what is Jenkins?
+Jenkins is an open source automation tool written in Java with plugins built for Continuous Integration purpose.Jenkins is used to build and test your software projects continuously making it easier for the developers to integrate changes to the project and also making it easier for the user to obtain a fresh build. It also allows you to continuously deliver your software by integrating with a vast number of testing and deployement technologies. With Jenkins the organisation can accelerate the software development process via automation. Jenkins achieves continuos integration with the help of plugins. plugins allow integration of various dev ops stages.If you need to integrate a particular tool with jenkins you just have to install the plugins whichever is required for the tool. Some of the plugins for integration are,
+GIT, Maven etc.
+
+Why GIT and Jenkins are used together?
+GIT is a source control manager and thats where you keep your source code for tracking all the code changes which happen over time and to baseline the versions when they are ready for release. Jenkins on the other hand is a continuos integration solution. It is intended to automate most of the tasks that a developer has to do while developing a new application. Without a CI solution a developer has to spend much time doing several such repititive non productive tasks.
+1) New featue in a web application.
+2) A developer assigned to this task will pull the code base from Git and do the esssential changes and perform unit testing, ensures the code quality manually and push the new code back into the GIT, the  he has to build the code deploy it into the integration instance, run integration testing and once the changes seems satisfactory he raises request for deployement. If we only had a minion to take care of the testing, building, Quality checks & deployemnet sections the por developer could have focussed better on the stuff that he is really good at which is implementing and improving the features logic.This minion we said is nothing but Jenkins. It acts as an orchestrator which runs all of these activities once the changes are checked into the Source control and thus gives a quick feedback to the developer whether the changes he had made is good enough for the production deployement or not.
