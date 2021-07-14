@@ -1,0 +1,1 @@
+start "" "C:\Program Files (x86)\WinSCP\WinSCP.exe" sftp://hcluser:PnpRh3l!23@10.115.171.156

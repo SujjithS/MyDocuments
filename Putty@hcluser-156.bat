@@ -1,0 +1,1 @@
+start /max "" "C:\Program Files\PuTTY\putty.exe" -ssh hcluser@10.115.171.156 -pw PnpRh3l!23
