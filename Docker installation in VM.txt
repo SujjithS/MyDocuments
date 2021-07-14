@@ -1,0 +1,32 @@
+
+    
+steps to setup docker on new machine
+Install docker ce and docker compose
+   Run below commands one by one:-
+   a. yum install -y yum-utils
+   b. yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+(If requred yum info subscription-manager enabled)
+   d. sudo yum install docker-ce
+   e. start docker by using command: systemctl start docker
+   f. Verify docker: docker version
+   g. Install docker-compose:    
+      1. sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+      2. sudo chmod +x /usr/local/bin/docker-compose
+      3. sudo mv /usr/local/bin/docker-compose /usr/bin/docker-compose
+      4. sudo chmod +x /usr/bin/docker-compose
+   h. Verify docker-compose by running command: docker-compose version
+
+
+4. Pre-setup:In /etc/docker, create file daemon.json with the following content:
+   a. cd /etc/docker
+   b. vi daemon.json
+   c. paste below content in the file daemon.json:-
+      {​​​​​​​​
+        "insecure-registries":["comlnx94.prod.hclpnp.com"]
+      }​​​​​​​​
+   d. Verify the saved content as in step c in the file daemon.json by using -> cat daemon.json
+   e. Reload and Restart docker service by:
+      systemctl daemon-reload  
+      systemctl stop docker  
+      systemctl start docker
+

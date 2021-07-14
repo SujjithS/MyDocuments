@@ -1,0 +1,2 @@
+Use this cmd when eclipse get freeze
+C:\Users\SujjithS\eclipse\java-oxygen\eclipse\eclipse.exe -vm "C:\Program Files\Java\jdk1.8.0_261\bin\javaw.exe"

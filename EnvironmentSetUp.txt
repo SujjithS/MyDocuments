@@ -1,0 +1,162 @@
+putty---- machine IP
+username-hcluser
+password--wcs1admin
+again as sudo user---sudo su -
+password---wcs1admin
+then
+cd /home/hcluser/
+to see the files isnide hcluser type
+ls -lrt
+then cd commerce-docker-copmose/
+then switch to  cd bvt/
+then ls -lrt
+then neeed to give permission
+chmod 777 *
+then ./startup.sh Utility
+after startup success we need to perofrm indexing using curl commands
+
+curl --user spiuser:passw0rd --insecure -X POST "https://localhost:5443/wcs/resources/admin/index/dataImport/build?masterCatalogId=10001"
+
+curl -k -u spiuser:passw0rd -X GET "https://localhost:3738/search/admin/resources/index/build/status?jobStatusId=1001"
+
+then open aurora website
+
+AuroraESite:    https://10.190.67.72:8443/wcs/shop/en/auroraesite
+AuroraB2BESite:    https://10.190.66.167:8443/wcs/shop/en/aurorab2besite
+
+then goto commerce-dev/test-bvt then copy file clone or download
+
+then goto the automationDevWS and right click and select git bash
+then type git clone and paste copied file and enter
+
+type cd test-bvt/master/
+ enter then copy and paste (shift+insert)
+./prepare.sh master
+./gradlew cleanEclipse
+./gradlew build -x test
+./gradlew :search-b2b:prepareConfig :search-b2b:testGroup
+
+
+To check containers we need to give 
+docker ps -a
+to stop all containers
+docker stop $(docker ps -aq)
+to remove all the containers
+docker rm $(docker ps -aq)
+to remove images
+docker rmi $(docker images -q)
+to remove duplicate images
+docker rmi -f $(docker images -q)
+
+
+
+
+
+to enable the unavailable option to add to cart
+UPDATE STORECONF SET VALUE='0' WHERE NAME='wc.search.priceMode.compatiblePriceIndex'; 
+after control + enter
+ and then enter 
+commit; then 
+control+enter
+
+
+
+
+
+http://10.190.66.157:8080/  ----------------- Jenkins
+
+10.190.67.66
+
+https://www.youtube.com/watch?v=aqrxDxumKZQ&list=PL6flErFppaj08LFolWioWyjfSGtCWcvVp-------------------> Rest assured videos
+
+curl --user spiuser:passw0rd --insecure --request POST "https://10.190.67.75:5443/wcs/resources/admin/index/dataImport/build?connectorId=auth.reindex&storeId=1"
+
+ 
+
+curl --user spiuser:passw0rd -sS --insecure --request GET https://10.190.67.75:5443/wcs/resources/admin/index/dataImport/status?jobStatusId="1007"
+
+curl --user spiuser:passw0rd --insecure --request POST "https://10.190.67.75:5443/wcs/resources/admin/index/dataImport/build?connectorId=auth.reindex&storeId=2"
+
+[3:26 PM] Darapu Bhavani
+    curl --user spiuser:passw0rd --insecure --request POST "https://10.190.66.163:5443/wcs/resources/admin/index/dataImport/build?connectorId=auth.reindex&storeId=1"
+
+curl --user spiuser:passw0rd -sS --insecure --request GET https://10.190.66.163:5443/wcs/resources/admin/index/dataImport/status?jobStatusId="1005"
+
+
+10.190.67.75
+
+cd /home/hcluser/vinay/commerce-docker-compose-master/bvt/
+
+https://10.190.66.102:8000/lobtools/cmc/ManagementCenter
+
+https://10.190.67.116:8443/wcs/shop/en/auroraesite/apparel/women/dresses
+
+http://10.190.66.163:30900/search/resources/swagger-ui.html#/
+
+http://10.190.67.66:30600/nifi/
+
+
+docker exec -it (Conatiner name) bash ---------------- go inside container
+docker logs (container name)
+ctrl+c to stop
+docker-compose restart db--------- To restart the container for db
+docker-compose restart txn-------for txn
+ls *.lic.o(file name) --------- To check file name exists or not 
+free -g----- To check the free spaces in vms
+sync; echo 3 > /proc/sys/vm/drop_caches------dropping some memory from the vms
+
+
+
+:q---> to come out from input.properties in putty
+
+
+10.190.66.163---- Commerce
+10.190.67.66.........es
+
+v9-20210309-1700
+
+
+
+Workaround to get onedb container up
+	
+docker exec -it bvt_db_1 bash
+	sudo rm $INFORMIXDIR/etc/.lic.0/*
+	exit
+	docker restart bvt_db_1
+
+
+https://hclo365-my.sharepoint.com/personal/vinaykumaru_hcl_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fvinaykumaru%5Fhcl%5Fcom%2FDocuments%2FRecordings%2FCall%20with%20Sourabh%20Gite%2D20210301%5F143444%2DMeeting%20Recording%2Emp4&parent=%2Fpersonal%2Fvinaykumaru%5Fhcl%5Fcom%2FDocuments%2FRecordings&originalPath=aHR0cHM6Ly9oY2xvMzY1LW15LnNoYXJlcG9pbnQuY29tLzp2Oi9nL3BlcnNvbmFsL3ZpbmF5a3VtYXJ1X2hjbF9jb20vRWRNandNWDE2SkJDbGYzbUlxTjhNWWtCRjlWTV92TnBXdnRDWl8wUTlVSGE1Zz9ydGltZT1PZmMtUm52azJFZw
+
+
+
+cd /home/hcluser/vinay/docker-compose/bvt/
+
+
+
+Chetans pding onedb
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+https://hclo365-my.sharepoint.com/personal/vinaykumaru_hcl_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fvinaykumaru%5Fhcl%5Fcom%2FDocuments%2FRecordings%2FCall%20with%20Chetan%20and%201%20other%2D20210317%5F220411%2DMeeting%20Recording%2Emp4&parent=%2Fpersonal%2Fvinaykumaru%5Fhcl%5Fcom%2FDocuments%2FRecordings&originalPath=aHR0cHM6Ly9oY2xvMzY1LW15LnNoYXJlcG9pbnQuY29tLzp2Oi9nL3BlcnNvbmFsL3ZpbmF5a3VtYXJ1X2hjbF9jb20vRVlEaXZGVWdmU0JKc2FheS02TVF4RG9CYlNBdjNEM2tsbDZhZ3pIQ1lGTUt5UT9ydGltZT1OZ2Fhb00zcDJFZw
+
+
+
+
+
+10.190.67.116------------->comm
+10.190.66.181------>es
+
+
+
+
+
+10.190.67.66----es
+10.190.66.163-----comm
+cd /home/hcluser/vinay/docker-compose/bvt/
+
+jdbc:informix-sqli://10.190.66.163:9088/mall:INFORMIXSERVER=onedb;user=WCS;password=wcs1;
+
+
+
+./prepare.sh master
+./gradlew cleanEclipse
+./gradlew build -x test
+

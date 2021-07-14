@@ -1,0 +1,74 @@
+Email Validation:
+
+ 
+
+
+-->Login as SiteAdmin
+
+ 
+
+1. Create Transport
+-->System Administration--> Transport -->Email--> 1.Transport details(default values)
+Transport configuration: Host (comlnx14.nonprod.hclpnp.com)
+Transport method: select mail
+Enable status (active)
+
+ 
+
+
+2.Create Message type
+-->System administartion --> Message type -->new-->
+Message type details --reset pwd
+Transport type ---select mail
+Device format--> standard device format
+Check Archive message checkbox (to get success messages inside it)
+
+ 
+
+Recepient email: cshopper1@comlnx14.nonprod.hclpnp.com
+Subject: reset password
+From: test@hcl.com
+
+ 
+
+3. Create Scheduler
+--> System Administrator --> scheduler -->
+Job details- default**
+Site command - sendtransacted message
+Job schedule --change start date to current date and run only once
+Job configuration -->scheduler interval: 30, priority:10, Associated user: wcsadmin
+
+ 
+
+4. Create Regsitered User:
+Manage Organization -->users--->select store(aurora esite)--> new--->shopper selected by default
+Parent org --> default
+ Create registered customer (email: cshopper1@comlnx14.nonprod.hclpnp.com), Role-Registered cutomer
+
+ 
+
+-Reset password icon 
+
+ 
+
+regstered user1
+
+ 
+
+ 
+
+5. System administration---> messages:
+
+ 
+
+should be triggered
+
+ 
+
+
+Check in database: MSGSTORE
+
+ 
+
+ 
+
