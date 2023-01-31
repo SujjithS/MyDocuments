@@ -26,7 +26,8 @@ stages:
  - stage: PetalinuxContainer
    jobs:
       - job: PetalinuxContainerBuild
-        pool: berlin-d2sv3-vmss
+        pool: 
+         vmImage: ubuntu-latest
         timeoutInMinutes: 0
         cancelTimeoutInMinutes: 35790
         steps:
