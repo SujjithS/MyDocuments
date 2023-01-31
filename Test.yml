@@ -33,4 +33,4 @@ stages:
         steps:
           - template: petalinux-container-build.yml
             parameters:
-              test_parameter: Test_value
+              test_parameter: This is just a test
