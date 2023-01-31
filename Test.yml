@@ -22,14 +22,14 @@ variables:
     ${{ else }}:
       value: $(Build.SourceVersion)
       
-      
+stages: 
  - stage: PetalinuxContainer
-     jobs:
+   jobs:
       - job: PetalinuxContainerBuild
         pool: berlin-d2sv3-vmss
         timeoutInMinutes: 0
         cancelTimeoutInMinutes: 35790
         steps:
-          - template: /tools/devops/templates/steps/petalinux-container-build.yml
-           parameters:
+          - template: petalinux-container-build.yml
+            parameters:
               test_parameter: Test_value
