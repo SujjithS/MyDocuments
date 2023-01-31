@@ -1,0 +1,35 @@
+trigger:
+  branches:
+    include:
+      - master
+
+pr:
+  autoCancel: true
+  branches:
+    include:
+      - main
+  drafts: false
+
+variables:
+  - name: BRANCH_NAME
+    ${{ if eq( variables['Build.Reason'], 'PullRequest' ) }}:
+      value: $(System.PullRequest.SourceBranch)
+    ${{ else }}:
+      value: "feature/$(Build.SourceBranchName)"
+  - name: COMMIT_ID
+    ${{ if eq( variables['Build.Reason'], 'PullRequest' ) }}:
+      value: $(system.pullRequest.sourceCommitId)
+    ${{ else }}:
+      value: $(Build.SourceVersion)
+      
+      
+ - stage: PetalinuxContainer
+     jobs:
+      - job: PetalinuxContainerBuild
+        pool: berlin-d2sv3-vmss
+        timeoutInMinutes: 0
+        cancelTimeoutInMinutes: 35790
+        steps:
+          - template: /tools/devops/templates/steps/petalinux-container-build.yml
+           parameters:
+              test_parameter: Test_value
